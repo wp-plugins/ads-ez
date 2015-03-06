@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez-pro
 Tags: google adsense, adsense, adsense plugin, ads, advertising, income
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 2.00
+Stable tag: 2.01
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -62,8 +62,16 @@ Adding WordPress plugin version.
 
 == Installation ==
 
-1. Upload the contents of the archive `ads-ez-lite` or `ads-ez-pro` to your server.
-2. Browse to the admin location of your uploaded the package (`http://yourserver/ads-ez-lite/admin`, for instance) using your web browser.
+The easiest way to install this plugin is to use the WordPress Admin interface. Go to your admin dashboard, find the "Plugins" menu, and click on "Add New". Find this plugin and click on "Install Now" and follow the WordPress instructions.
+
+If you want to download it and manually install, you can again use the WordPress dashboard interface. First download the plugin zip file to your local computer. Then go to your admin dashboard, find the "Plugins" menu, and click on "Add New". After clicking on the "Add New" menu item as above, click on "Upload" (below the title "Install Plugins" near the top). Browse for your downloaded zip file, upload it and activate the plugin.
+
+Further updates (and Pro upgrades and module installations) to the plugin can be done easily from the plugin admin page itself, by clicking on the Updates button on the top right corner.
+
+= Standalone Mode =
+
+1. Upload the contents of the archive `ads-ez` to your server.
+2. Browse to the admin location of your uploaded the package (`http://yourserver/ads-ez/admin`, for example) using your web browser.
 3. Enter the DB details and set up and Admin account in a couple of minutes and you are done with the installation!
 
 Note that in the second step, your web server will try to create a configuration file where you uploaded the `ads-ez` package. If it cannot do that because of permission issues, you will have to create an empty file `dbCfg.php` and make it writeable. Don't worry, the setup will prompt you for it with detailed instructions.
@@ -88,6 +96,7 @@ Well, I did, which is why I wrote this package. OpenX is a large application, an
 
 = History =
 
+* V2.01: Fixing some bugs specific to the plugin version. [Mar 6, 2015]
 * V2.00: Adding WordPress plugin version. [Jan 2, 2015]
 * V1.80: Major improvements to statistics and charting in the Pro version. [Dec 7, 2014]
 * V1.71: Fixing the tour to handle accordion menus. [Nov 14, 2014]

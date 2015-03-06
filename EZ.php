@@ -222,10 +222,10 @@ if (!class_exists("EZ")) {
       }
       foreach (array("../../..", "../../../..", "../../../../..") as $dir) {
         $wpHeader = "$dir/wp-blog-header.php";
-      if (@file_exists($wpHeader)) {
-        self::$isInWP = true;
-        return true;
-      }
+        if (@file_exists($wpHeader)) {
+          self::$isInWP = true;
+          return true;
+        }
       }
       return self::$isInWP;
     }
@@ -280,6 +280,20 @@ if (!class_exists("EZ")) {
         self::logout();
       }
       return $isLoggedin;
+    }
+
+    static function adsURL() {
+      if (function_exists('plugins_url')) {
+        $adsURL = plugins_url("", __FILE__) . "/";
+        return $adsURL;
+      }
+      else {
+        $docRoot = realpath($_SERVER['DOCUMENT_ROOT']);
+        $ezppRoot = dirname(__FILE__);
+        $self = str_replace($docRoot, '', $ezppRoot);
+        $url = self::getBaseUrl() . $self . '/';
+        return $url;
+      }
     }
 
     static function urlExists($url) {//se passar a URL existe
@@ -872,7 +886,7 @@ EZ::$isPro = file_exists('options-advanced.php');
 // construct DB object after defining EZ
 $db = new DbHelper();
 
-if (!EZ::isLoggedInWP()) {
+if (!EZ::$isInWP) {
   require_once 'admin/lang.php';
 }
 

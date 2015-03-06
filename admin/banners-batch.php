@@ -91,7 +91,7 @@ foreach ($banners as $b) {
 
       <div $style $class>
         <div class='left'>
-          <a href='../$b' data-toggle="lightbox" class='thumbnail'>
+          <a href='../$b' data-toggle="lightbox" class='thumbnail lightbox'>
             <img src='../$b' alt='$b' class='thumb thumbnails' />
           </a>
         </div>
@@ -157,6 +157,11 @@ closeBox();
           flashError(a.responseText);
         }
       });
+    });
+    $(".lightbox1").click(function (e) {
+      e.preventDefault();
+      var href = $(this).attr('href').replace('?inframe', '');
+      bootbox.alert("<img src='" + href + "'/>");
     });
     $('.xedit').editable({url: xeditTarget});
     $(".close").click(function () {

@@ -34,4 +34,5 @@ if (empty($row)) {
 // Logged in?
 if (!EZ::isLoggedIn()) {
   header("Location: login.php?error=3");
+  exit;
 }

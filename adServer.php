@@ -42,6 +42,12 @@ function showBanner($banner) { // print the iFrame source
     $cdnUrl .= '/';
   }
   extract($banner); // defines target and title
+  if (isset($_REQUEST['wp'])) {
+    $wp = "&wp";
+  }
+  else {
+    $wp = "";
+  }
   echo <<<EOF0
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
@@ -52,7 +58,7 @@ function showBanner($banner) { // print the iFrame source
     #ezwrapper {border: 0px; margin: 0; padding: 0; position: relative;}#ezfooter {position:absolute;bottom:0;border-width:1px;border-color:#000;height:12px;padding:1px;font-family:Arial;font-size:10px;font-weight:bold;color:#fff;background:#b00;} #ezfooter a:link, #ezfooter a:visited, #ezfooter a:hover {color:#fff;text-decoration:none;} </style>
   </head>
   <body>
-    <div id="ezwrapper"><a href='ck.php?url=$target' target='_blank'><img src='$cdnUrl$file' width='$width' height='$height' alt='$title' title='$title' border='0' /></a>
+    <div id="ezwrapper"><a href='ck.php?url=$target$wp' target='_blank'><img src='$cdnUrl$file' width='$width' height='$height' alt='$title' title='$title' border='0' /></a>
 EOF0;
   if ($badgeEnabled) {
     echo <<<EOF1

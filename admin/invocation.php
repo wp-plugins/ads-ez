@@ -91,7 +91,7 @@ $wpQs = '';
       var sizeArray = size.split("x");
       var w = sizeArray[0];
       var h = sizeArray[1];
-      var url = location.href;
+      var url = location.href.replace('?inframe', '');
       var queryString = '?';
       if (category && category !== 'All') {
         queryString += 'cat=' + category + '&';

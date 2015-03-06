@@ -46,7 +46,7 @@ $options['salt'] = array('name' => __('DB Security Salt', 'ads-ez'),
 $options['badge_enable'] = array('name' => __('Enable Badge', 'ads-ez'),
     'help' => __('Ads EZ can show a small badge near the bottom left corner of your badges and ads, similar to traditional ad providers.', 'ads-ez'),
     'type' => 'checkbox',
-    'value' => 1);
+    'value' => 0);
 $options['badge_target'] = array('name' => __('Badge Target', 'ads-ez'),
     'value' => 'http://ads-ez.com/ads/',
     'help' => __('The URL target where your users will be taken to when they click on the badge.', 'ads-ez'));

@@ -22,6 +22,8 @@ function switchMO($MO) {
 
 if (EZ::$isInstallingWP || !EZ::isLoggedInWP()) {
 
+  if (!function_exists('__')) {
+
   function __($s, $MO) {
     switchMO($MO);
     return gettext($s);
@@ -32,6 +34,7 @@ if (EZ::$isInstallingWP || !EZ::isLoggedInWP()) {
     echo gettext($s);
   }
 
+}
 }
 
 function getLangs() {

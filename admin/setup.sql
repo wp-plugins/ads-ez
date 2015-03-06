@@ -44,11 +44,11 @@ CREATE TABLE IF NOT EXISTS `{prefix}categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-INSERT IGNORE INTO `{prefix}categories` (`id`, `name`, `comment`)
+INSERT IGNORE INTO `{prefix}categories` (`id`, `name`, `comment`, `active`)
 VALUES
-	(1,'category-1','Default category 1'),
-	(2,'category-2','Default category 2'),
-	(3,'category-3','Default category 3');
+	(1,'category-1','Default category 1', 1),
+	(2,'category-2','Default category 2', 1),
+	(3,'category-3','Default category 3', 1);
 
 CREATE TABLE `{prefix}options_meta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
