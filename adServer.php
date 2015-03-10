@@ -108,10 +108,15 @@ EOF3;
 
 function showDefault($size) {
   $options = EZ::getOptions();
-  $badgeTarget = $options['badge_target'];
+  $badgeEnabled = $options['badge_enable'];
+  if ($badgeEnabled) {
+    $badgeTarget = $options['badge_target'];
+  }
+  else {
+    $badgeTarget = "#";
+  }
   $badgeLong = $options['badge_long_text'];
   $badgeShort = $options['badge_short_text'];
-  $badgeEnabled = $options['badge_enable'];
   $fallBack = $options['fallback_ad'];
   list($width, $height) = explode("x", $size);
   $fontsize = $height * $width / 5000;

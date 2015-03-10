@@ -5,7 +5,7 @@ if (!class_exists("AdsEZ")) {
   class AdsEZ {
 
     var $isPro, $strPro, $plgDir, $plgURL;
-    var $ezTran, $ezAdmin, $slug, $domain, $myPlugins;
+    var $ezTran, $domain;
 
     function AdsEZ() { //constructor
       $this->plgDir = dirname(__FILE__);
@@ -17,7 +17,7 @@ if (!class_exists("AdsEZ")) {
       }
       if (is_admin()) {
         require_once($this->plgDir . '/EzTran.php');
-        $this->domain = $this->slug = 'ads-ez';
+        $this->domain = 'ads-ez';
         $this->ezTran = new EzTran(__FILE__, "Ads EZ{$this->strPro}", $this->domain);
         $this->ezTran->setLang();
       }

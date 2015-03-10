@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 2.02
+Stable tag: 2.03
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -43,7 +43,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Code cleanup.
+Improvements in the login check functions.
 
 == Screenshots ==
 
@@ -96,6 +96,7 @@ Well, I did, which is why I wrote this package. OpenX is a large application, an
 
 = History =
 
+* V2.03: Improvements in the login check functions. [Mar 9, 2015]
 * V2.02: Code cleanup. [Mar 7, 2015]
 * V2.01: Fixing some bugs specific to the plugin version. [Mar 6, 2015]
 * V2.00: Adding WordPress plugin version. [Jan 2, 2015]

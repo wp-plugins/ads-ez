@@ -4,7 +4,7 @@
   Plugin Name: Ads EZ Lite
   Plugin URI: http://www.thulasidas.com/packages/ads-ez
   Description: Your own personal Ad Server, Ads EZ is the simplest possible way to serve your ads to multiple web sites. It centralizes your banners and textual ads in one location, with a powerful and modern admin interface.
-  Version: 2.02
+  Version: 2.03
   Author: Manoj Thulasidas
   Author URI: http://www.thulasidas.com
  */
