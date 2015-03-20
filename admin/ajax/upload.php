@@ -17,3 +17,4 @@ else {
   http_response_code(400);
   die("Please login before modifying $table!");
 }
+exit();

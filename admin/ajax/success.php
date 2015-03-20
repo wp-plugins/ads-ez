@@ -24,3 +24,4 @@ if ($posted_validator) { // a server-side validator is specified
 }
 
 http_response_code(200);
+exit();
