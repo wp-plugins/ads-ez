@@ -15,6 +15,7 @@ if (EZ::isLoggedIn()) {
 }
 else {
   http_response_code(400);
-  die("Please login before modifying $table!");
+  die("Please login before uploading!");
 }
+http_response_code(200);
 exit();
