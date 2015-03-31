@@ -38,7 +38,7 @@ openBox("Configuration Options", "th-list", 10, "The table below is editable. Yo
 closeBox();
 ?>
 <script>
-  var xeditHanlder = 'ajax/options.php';
+  var xeditHandler = 'ajax/options.php';
 </script>
 <?php
 require('footer.php');

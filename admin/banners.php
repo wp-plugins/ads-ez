@@ -57,7 +57,7 @@ EOF;
 closeBox();
 ?>
 <script>
-  var xeditHanlder = 'ajax/banners.php';
+  var xeditHandler = 'ajax/banners.php';
 </script>
 <?php
 require('footer.php');

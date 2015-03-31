@@ -103,7 +103,7 @@ foreach ($banners as $b) {
           <a id='title-$bannerId' class='xedit wrap' data-name='title' data-type='text' data-tpl='<input type="text" style="width:500px">' data-pk='$id' data-title='Title/Alt'>$title</a>
           <br />
           <label>Width</label> <a id='width-$bannerId' class='xedit' data-name='width' data-type='text' data-pk='$id' data-title='Width'>$width</a><label style="width:40px"></label>
-          <label>Height</label> <a id='height-$bannerId' class='xedit' data-name='height' data-type='text' data-pk='$id' data-title='Height'>$width</a>
+          <label>Height</label> <a id='height-$bannerId' class='xedit' data-name='height' data-type='text' data-pk='$id' data-title='Height'>$height</a>
           <br />
           <label>Category</label>
           <a id='category-$bannerId' class='xedit' data-name='category' data-type='select' data-pk='$id' data-title='Category' data-source="$catSource" data-value='$category'>$catName</a>
@@ -132,8 +132,8 @@ if ($noBanners) {
 closeBox();
 ?>
 <script>
+  var xeditHandler = 'ajax/success.php';
   $(document).ready(function () {
-    var xeditTarget = 'ajax/success.php';
     $('.createBanner').click(function () {
       var id = $(this).attr('id');
       $.ajax({url: 'ajax/banners-new.php',
@@ -150,8 +150,8 @@ closeBox();
         success: function (pk) {
           $("#pk-" + id).text(pk);
           $("#" + id).attr('disabled', 'disabled').text('Already Saved');
-          xeditTarget = 'ajax/banners.php';
-          $('.xedit').editable('option', 'url', xeditTarget).editable('option', 'pk', pk);
+          xeditHandler = 'ajax/banners.php';
+          $('.xedit').editable('option', 'url', xeditHandler).editable('option', 'pk', pk);
         },
         error: function (a) {
           flashError(a.responseText);
