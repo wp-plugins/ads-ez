@@ -100,7 +100,7 @@ function docReady() {
   });
 
   //popover
-  $('[data-toggle="popover"]').popover({html: true});
+  $('[data-toggle="popover"]').popover({html: true, container: 'body'});
 
   // lightbox
   // delegate calls to data-toggle="lightbox"
@@ -142,11 +142,18 @@ function docReady() {
     if (!helpTitle) {
       helpTitle = 'Help';
     }
-    $('#myModalText').html(helpText);
-    $('#myModalTitle').text(helpTitle);
-    $('#myModalClose').hide();
-    $('#myModalSave').text('Done');
-    $('#myModal').modal('show');
+    bootbox.dialog({
+      message: helpText,
+      title: helpTitle,
+      onEscape: function () {
+        $(this).modal('hide');
+      },
+      buttons: {
+        success: {
+          label: "OK"
+        }
+      }
+    });
   });
 
   // My x-edit interface, with checkbox defined.
@@ -226,7 +233,7 @@ function docReady() {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
   });
 
-  $('.goPro').click(function (e) {
+  $('body').on('click', ".goPro", function (e) {
     e.preventDefault();
     var product = $(this).attr('data-product');
     if (!product) {
@@ -238,12 +245,19 @@ function docReady() {
     var h = 728;
     return ezPopUp(url, title, w, h);
   });
-  $('[data-toggle="popover"]').popover({
-    container: 'body'
+
+  $('.popup').click(function (e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var title = "Support Ticket";
+    var w = 1024;
+    var h = 728;
+    return ezPopUp(url, title, w, h);
   });
+
   if (inIframe()) {
     $("#standAloneMode").show();
-    $('body').find('a').not("#standAloneMode").each(function () {
+    $('body').find('a').not("#standAloneMode, .popup").each(function () {
       var href = $(this).attr('href');
       if (href) {
         href += (href.match(/\?/) ? '&' : '?') + 'inframe';
@@ -252,7 +266,7 @@ function docReady() {
     });
   }
   else {
-    $("#standAloneMode").hide(2000);
+    $("#standAloneMode").fadeOut();
   }
 
 }
@@ -398,6 +412,13 @@ function validate_alnum(s) {
   }
 }
 
+function validate_url(s) {
+  var re = /^([a-z]([a-z]|\d|\+|-|\.)*):(\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?((\[(|(v[\da-f]{1,}\.(([a-z]|\d|-|\.|_|~)|[!\$&'\(\)\*\+,;=]|:)+))\])|((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=])*)(:\d*)?)(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*|(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)){0})(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i;
+  if (!re.test(s)) {
+    return "Bad URL";
+  }
+}
+
 var validate = {
   email: function (s) {
     return validate_email(s);
@@ -410,5 +431,8 @@ var validate = {
   },
   alnum: function (s) {
     return validate_alnum(s);
+  },
+  url: function (s) {
+    return validate_url(s);
   }
 };

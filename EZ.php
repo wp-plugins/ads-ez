@@ -515,6 +515,11 @@ if (!class_exists("EZ")) {
         $row[$posted_pk] = $posted_value;
         $status = $db->putMetaData($table, $row);
       }
+      else if ($table == 'htmlAds' && !empty($posted_html)) { // HTML Ad html code
+        $row['id'] = $posted_pk;
+        $row['html'] = $posted_html;
+        $status = $db->putRowData($table, $row);
+      }
       else {
         $row['id'] = $posted_pk;
         $row[$posted_name] = $posted_value;
