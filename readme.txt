@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 2.07
+Stable tag: 2.08
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -43,7 +43,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Corrections to upload folder protection and HTML ads editing.
+More compatibility checks.
 
 == Screenshots ==
 
@@ -96,6 +96,7 @@ Well, I did, which is why I wrote this package. OpenX is a large application, an
 
 = History =
 
+* V2.08: More compatibility checks. [April 2, 2015]
 * V2.07: Corrections to upload folder protection and HTML ads editing. [Mar 31, 2015]
 * V2.06: Fixing a bug in banners batch processing, improving the charting module for more accurate display, and other minor changes. [Mar 27, 2015]
 * V2.05: Adding error handling for updates. [Mar 24, 2015]

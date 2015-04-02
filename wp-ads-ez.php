@@ -55,11 +55,27 @@ if (!class_exists("AdsEZ")) {
     }
 
     function printAdminPage() {
+      if (!empty($_POST['adsez_force_admin'])) {
+        update_option('adsez_force_admin', true);
+      }
+      $forceAdmin = get_option('adsez_force_admin');
       $testFile = plugins_url("admin/promo.php", __FILE__);
-      if (!@file_get_contents($testFile)) { // index cannot be used for testing
+      if (!$forceAdmin && !@file_get_contents($testFile)) { // index cannot be used for testing
         ?>
         <div class='error' style='padding:10px;margin:10px;font-size:1.3em;color:red;font-weight:500'>
-          This plugin needs direct access to its files so that they can be loaded in an iFrame. Looks like you have some security setting denying the required access. If you have an <code>.htaccess</code> file in your <code>wp-content</code> folder, please remove it or modify it to allow access to the php files in <code><?php echo $this->plgDir; ?>/</code>.
+          <p>This plugin needs direct access to its files so that they can be loaded in an iFrame. Looks like you have some security setting denying the required access. If you have an <code>.htaccess</code> file in your <code>wp-content</code> or <code>wp-content/plugins</code>folder, please remove it or modify it to allow access to the php files in <code><?php echo $this->plgDir; ?>/</code>.
+          </p>
+          <p>
+            If you would like the plugin to try to open the admin page, please set the option here:
+          </p>
+          <form method="post">
+            <input type="submit" value="Force Admin Page" name="adsez_force_admin">
+          </form>
+          <p>
+            <strong>
+              Note that if the plugin still cannot load the admin page after forcing it, you may see a blank or error page here upon reload. If that happens, please deactivate and delete the plugin. It is not compatible with your blog setup.
+            </strong>
+          </p>
         </div>
         <?php
         return;
@@ -67,6 +83,9 @@ if (!class_exists("AdsEZ")) {
       $src = plugins_url("admin/index.php", __FILE__);
       ?>
       <script type="text/javascript">
+        var errorTimeout = setTimeout(function () {
+          jQuery('#the_iframe').replaceWith("<div class='error' style='padding:10px;margin:10px;font-size:1.3em;color:red;font-weight:500'><p>This plugin needs direct access to its files so that they can be loaded in an iFrame. Looks like you have some security setting denying the required access. If you have an <code>.htaccess</code> file in your <code>wp-content</code> or <code>wp-content/plugins</code>folder, please remove it or modify it to allow access to the php files in <code><?php echo $this->plgDir; ?>/</code>.</p><p><strong>If Ads EZ still cannot load the admin page after forcing it, please deactivate and delete the plugin. It is not compatible with your blog setup.</strong></p></div>");
+        }, 1000);
         function calcHeight() {
           var w = window,
                   d = document,
@@ -79,7 +98,7 @@ if (!class_exists("AdsEZ")) {
           window.addEventListener('resize', calcHeight, false);
         }
         else if (window.attachEvent) {
-          window.attachEvent('onresize', calcHeight)
+          window.attachEvent('onresize', calcHeight);
         }
       </script>
       <?php
