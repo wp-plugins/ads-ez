@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 2.09
+Stable tag: 2.10
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -43,7 +43,8 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Fixing a style that may have caused the admin page not to appear on some blogs.
+More changes in the compatibility check.
+
 
 == Screenshots ==
 
@@ -92,10 +93,29 @@ I looked around for a light-weight ad serving solution for my own requirements, 
 
 Well, I did, which is why I wrote this package. OpenX is a large application, and consequently quite demanding both in terms of the effort needed to maintain it, and on system resources. It may not be appropriate for small scale, personal ad serving, which needs to be simple and quick. If you have only a couple of hunded banners and don't plan on charging for your ads, *Ads EZ* may be the right solution for you. Having said that, I will develop a paid advertising module for *Ads EZ* if there is enough demand for it.
 
+= Why do I get error message saying something about direct access to plugin files? =
+
+This plugin admin interface is designed with a loosely coupled architecture, which means it interacts with the WordPress core only for certain essential services (login check, plugin activation status, database access etc). Loosely coupled systems tend to be more robust and flexible than tightly integrated ones because they make fewer assumptions about each other. My plugin admin pages are fairly independent, and do not pollute the global scope or leak the style directives or JavaScript functions. In order to achieve this, they are loaded in iFrames within the WordPress admin interface.
+
+Your web server needs direct access to the plugin files to load anything in an iFrame. Some aggressive security settings block this kind of access, usually through an `.htaccess` file in your `wp-content` or `plugins` folders, which is why this plugin gives a corresponding error message if it detects inability to access the files (checked through a `file_get_contents` call on a plugin file URL). But some systems implement further blocks specifically on `file_get_contents` or on iFrames with specific styles (using `mod_securty` rules, for instance), which is why the plugin provides a means to override this auto-detection and force the admin page.
+
+= Is the direct access to plugin files a security hole? =
+
+Note that it is only your own webserver that needs direct access to the PHP files. The reason for preventing such access is that a hacker might be able to upload a malicious PHP (or other executable script) to your web host, which your webserver will run if asked to. Such a concern is valid only on systems where you explicitly permit unchecked file uploads. For instance, if anyone can upload any file to your media folder, and your media folder is not protected against direct access and script execution, you have given the potential hacker an attack vector.
+
+In this plugin, its media/banner upload folder has a multiple layers protection:
+1. Only users logged in as admin can ever see the upload interface.
+2. The upload script accepts only media file types.
+3. The backend AJAX handler also checks for safe file types.
+4. The media storage locations are protected against script execution.
+
+So allowing your webserver to serve the plugin admin files in an iFrame is completely safe, in my judgement.
+
 == Change Log ==
 
 = History =
 
+* V2.10: More changes in the compatibility check. [April 7, 2015]
 * V2.09: Fixing a style that may have caused the admin page not to appear on some blogs. [April 4, 2015]
 * V2.08: More compatibility checks. [April 2, 2015]
 * V2.07: Corrections to upload folder protection and HTML ads editing. [Mar 31, 2015]
