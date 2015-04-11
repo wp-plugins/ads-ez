@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 2.10
+Stable tag: 2.11
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -14,6 +14,10 @@ Ads EZ is personal ad server with numerous features. It centralizes your banner 
 *Ads EZ* is the simplest possible way to serve your ads to multiple web sites.
 
 Do you have multiple websites which you monetize using advertising? If so, this personal ad server may be the right tool for you. *Ads EZ* makes it easy for you to set up an optimized ad server that can service your websites. Aiming at simplicity, Ads EZ does away with all the complicated zone and expiry settings. All you have to do is to collect your banners in a folder, upload them and specify their targets using a simple and intuitive interface.
+
+= Live Demo =
+
+**Ads EZ admin interface is feature-rich, user-friendly and functional. Please visit this fully functional [live demo site](http://demo.thulasidas.com/ads-ez "Play with Ads EZ Admin Interface") to see what it can do for you.**
 
 = Features =
 
@@ -43,8 +47,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-More changes in the compatibility check.
-
+Launching a demo site.
 
 == Screenshots ==
 
@@ -115,6 +118,7 @@ So allowing your webserver to serve the plugin admin files in an iFrame is compl
 
 = History =
 
+* V2.11: Launching a demo site. [April 11, 2015]
 * V2.10: More changes in the compatibility check. [April 7, 2015]
 * V2.09: Fixing a style that may have caused the admin page not to appear on some blogs. [April 4, 2015]
 * V2.08: More compatibility checks. [April 2, 2015]
