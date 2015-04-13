@@ -1,48 +1,77 @@
 <?php
-require('header.php');
 $cfgDir = dirname(dirname(__FILE__));
 ?>
-<div>
-  <ul class="breadcrumb">
-    <li>
-      <a href="#">Home</a>
-    </li>
-    <li>
-      <a href="#">Tour</a>
-    </li>
+<div class="col-lg-8 col-sm-12">
+  <h4>Quick Start</h4>
+  <ul>
+    <li><strong><a href='banners-new.php'>Upload your banners</a></strong> to the <code>banners</code> folder (<code><?php echo $cfgDir; ?>/banners</code>) on your server and hit the <b><a href="banners-batch.php">Batch Process</a></b> menu item to provide banner data.</li>
+    <li>Get the <strong><a href="invocation.php">invocation codes</a></strong> and place them on your websites to start serving ads.</li>
+    <li>Take this <strong><a class="restart" href="#">tour</a></strong> any time you would like to go through the application features again.</li>
+  </ul>
+  <h4>WordPress and Shortcodes</h4>
+  <p>If you are using the Ads EZ ad server as a WordPress plugin, you can use <a href='http://codex.wordpress.org/Shortcode' target='_blank'>shortcodes</a> to place your ads on your posts and pages. Use the shortcode <code>[adsez]</code>,<code>[ads-ez]</code> or <code>[adsZz]</code>.</p>
+  <p>The supported parameters are <code>type</code> (which can be <code>banner</code> or <code>html</code>), <code>size</code> (ad size in the format <code>width x height</code>) and <code>cat</code> (ad category). To see the sizes and categories available, please visit the <a href='invocation.php'>Invocation</a> page.</p>
+
+  <h4>Context-Aware Help</h4>
+  <p>Most of the admin pages of this application have a blue help button near the right hand side top corner. Clicking on it will give instructions and help specific to the task you are working on. All configuration options have a help button associated with it, which give you popover help bubble when you hover over them. Finally, almost every button in the admin interface has popover help associated with it. If you need further assistance, please see the support channels available.</p>
+</div>
+<div class="col-lg-4 col-sm-12">
+  <h4>Play with a Demo</h4>
+  <ul>
+    <li>If you would like to play with the admin interface without messing up your installation, <a href="http://demo.thulasidas.com/ads-ez" title='Visit the demo site to play with the admin interface' data-toggle='tooltip' target="_blank">please visit Ads EZ demo site</a>.</li>
+  </ul>
+  <h4>Need Support?</h4>
+  <ul>
+    <li>Please check the carefully prepared <a href="http://www.thulasidas.com/plugins/ads-ez#faq" class="popup-long" title='Your question or issue may be already answered or resolved in the FAQ' data-toggle='tooltip'> Plugin FAQ</a> for answers.</li>
+    <li>For the lite version, you may be able to get support from the <a href='https://wordpress.org/support/plugin/ads-ez/' class='popup-long' title='WordPress forums have community support for this plugin' data-toggle='tooltip'>WordPress support forum</a>.</li>
+    <li>For preferential support and free updates, you can purchase a <a href='http://buy.thulasidas.com/support' class='popup btn-xs btn-info' title='Support contract costs only $4.95 a month, and you can cancel anytime. Free updates upon request, and support for all the products from the author.' data-toggle='tooltip'>Support Contract</a>.</li>
+    <li>For one-off support issues, you can raise a one-time paid <a href='http://buy.thulasidas.com/ezsupport' class='popup btn-xs btn-primary' title='Support ticket costs $0.95 and lasts for 72 hours' data-toggle='tooltip'>Support Ticket</a> for prompt support.</li>
+    <li>Please include a link to your blog URL when you contact the plugin author.</li>
+  </ul>
+  <h4>Happy with this plugin?</h4>
+  <ul>
+    <li>Please leave a short review and rate it at <a href=https://wordpress.org/plugins/ads-ez/" class="popup-long" title='Please help the author and other users by leaving a short review for this plugin and by rating it' data-toggle='tooltip'>WordPress</a>. Thanks!</li>
   </ul>
 </div>
-<h3>Take a Tour of Ads EZ Features</h3>
-<?php
-openBox("Tour and Help", "globe", 12);
-?>
-<h4>Quick Start</h4>
-<ul>
-  <li><strong><a href='banners-new.php'>Upload your banners</a></strong> to the <code>banners</code> folder (<code><?php echo $cfgDir; ?>/banners</code>) on your server and hit the <b><a href="banners-batch.php">Batch Process</a></b> menu item to provide banner data.</li>
-  <li>Get the <strong><a href="invocation.php">invocation codes</a></strong> and place them on your websites to start serving ads.</li>
-  <li>Take this <strong><a class="restart" href="#">tour</a></strong> any time you would like to go through the application features again.</li>
-</ul>
-<h4>WordPress and Shortcodes</h4>
-<p>If you are using the Ads EZ ad server as a WordPress plugin, you can use <a href='http://codex.wordpress.org/Shortcode' target='_blank'>shortcodes</a> to place your ads on your posts and pages. Use the shortcode <code>[adsez]</code>,<code>[ads-ez]</code> or <code>[adsZz]</code>.</p>
-<p>The supported parameters are <code>type</code> (which can be <code>banner</code> or <code>html</code>), <code>size</code> (ad size in the format <code>width x height</code>) and <code>cat</code> (ad category). To see the sizes and categories available, please visit the <a href='invocation.php'>Invocation</a> page.</p>
+<div class="clearfix"></div>
 
-<h4>Context-Aware Help</h4>
-<p>Most of the admin pages of this application have a blue help button near the right hand side top corner. Clicking on it will give instructions and help specific to the task you are working on.</p>
 <hr />
-<p class="center-text"> <a class="btn btn-success center-text restart" href="#" data-toggle='tooltip' title='Start or restart the tour any time' id='restart'><i class="glyphicon glyphicon-globe icon-white"></i>&nbsp; Start the Tour</a></p>
+<p class="center-text"> <a class="btn btn-primary center-text restart" href="#" data-toggle='tooltip' title='Start or restart the tour any time' id='restart'><i class="glyphicon glyphicon-globe icon-white"></i>&nbsp; Start Tour</a>
+  <a class="btn btn-primary center-text showFeatures" href="#" data-toggle='tooltip' title='Show the features of this plugin and its Pro version'><i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Show Features</a>
+</p>
 <?php
-closeBox();
+if (isset($_REQUEST['inframe'])) {
+  ?>
+  <style type="text/css">
+    .tour-step-background {
+      background: transparent;
+      border: 2px solid blue;
+    }
+    .tour-backdrop {
+      opacity:0.2;
+    }
+  </style>
+  <?php
+}
 ?>
 <script>
   $(document).ready(function () {
     if (!$('.tour').length && typeof (tour) === 'undefined') {
-      var tour = new Tour({backdrop: true, backdropPadding: 20,
+      var tour = new Tour({backdrop: true,
         onShow: function (t) {
           var current = t._current;
           var toShow = t._steps[current].element;
-          $(toShow).parent('ul').parent().siblings('.accordion').find('ul').slideUp();
-          $(toShow).parent('ul').slideDown();
-        }});
+          var dad = $(toShow).parent('ul');
+          var gdad = dad.parent();
+          dad.slideDown();
+          if (dad.hasClass('accordion')) {
+            gdad.siblings('.accordion').find('ul').slideUp();
+          }
+          else if (dad.hasClass('dropdown-menu')) {
+            gdad.siblings('.dropdown').find('ul').hide();
+          }
+        }
+      });
       tour.addStep({
         element: "#dashboard",
         placement: "right",
@@ -79,7 +108,7 @@ closeBox();
         title: "Upgrade Your App to Pro",
         content: "To unlock the full potential of this app, you may want to purchase the Pro version. You will get an link to download it instantly. It costs only $14.95 and adds tons of features. These Pro features are highlighted by a red icon on this menu bar."
       });
-      tour.addStep({ // The first on ul unroll is ignored. Bug in BootstrapTour?
+      tour.addStep({// The first on ul unroll is ignored. Bug in BootstrapTour?
         element: "#banners",
         placement: "right",
         title: "Manage Your Banners",
@@ -109,7 +138,7 @@ closeBox();
         title: "Create a New Banner",
         content: "<p class='red'>This is a Pro feature.</p><p>It allows you to upload multiple banners and edit their meta data in a neat interface. In this lite version, you can upload the banner to your <code>banners</code> folder or any subfolder below it and run the <b>Batch Process</b> to enter the meta data.</p>"
       });
-      tour.addStep({ // The first on ul unroll is ignored. Bug in BootstrapTour?
+      tour.addStep({// The first on ul unroll is ignored. Bug in BootstrapTour?
         element: "#htmlAds",
         placement: "right",
         title: "Manage Your HTML Ads",
@@ -127,7 +156,7 @@ closeBox();
         title: "Create a New HMTL Ad",
         content: "<p class='red'>This is a Pro feature.</p><p>The Pro version allows you to store and serve HTML and JavaScript ads such as AdSense and other providers. The lite version is limited to banner ads. Here, you can store a new HTML/JS ad.</p>"
       });
-      tour.addStep({ // The first on ul unroll is ignored. Bug in BootstrapTour?
+      tour.addStep({// The first on ul unroll is ignored. Bug in BootstrapTour?
         element: "#categories",
         placement: "right",
         title: "Categories and Statistics",
@@ -151,7 +180,7 @@ closeBox();
         title: "Ad Serving Statistics",
         content: "<p class='red'>This is a Pro feature.</p><p>Here you can see how your ads are being served, and their performance."
       });
-      tour.addStep({ // The first on ul unroll is ignored. Bug in BootstrapTour?
+      tour.addStep({// The first on ul unroll is ignored. Bug in BootstrapTour?
         element: "#invocation",
         placement: "right",
         title: "Integration",
@@ -169,7 +198,7 @@ closeBox();
         title: "Replace OpenX with Ads EZ",
         content: "<p class='red'>This is a Pro feature.</p><p>Ads EZ is designed to be drop-in replacement for OpenX. Here, you can generate the <code>.htaccess</code> directives that will make your Ads EZ app look like your OpenX server to the world.</p>"
       });
-      tour.addStep({ // The first on ul unroll is ignored. Bug in BootstrapTour?
+      tour.addStep({// The first on ul unroll is ignored. Bug in BootstrapTour?
         element: "#options",
         placement: "right",
         title: "Configuration",
@@ -206,10 +235,19 @@ closeBox();
         content: "<p>You now know the Ads EZ interface. Congratulations!</p>"
       });
     }
-    $(".restart").click(function () {
+    $(".restart").click(function (e) {
+      e.preventDefault();
       tour.restart();
+    });
+    $(".showFeatures").click(function (e) {
+      e.preventDefault();
+      $("#features").toggle();
+      if ($("#features").is(":visible")) {
+        $(this).html('<i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Hide Features</a>');
+      }
+      else {
+        $(this).html('<i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Show Features</a>');
+      }
     });
   });
 </script>
-<?php
-require('footer.php');

@@ -11,8 +11,18 @@
 </div>
 
 <?php
-openBox("Introduction", "home",12);
-include('intro.php');
+openBox("Quick Start and Tour", "home", 12);
+require 'tour.php';
+closeBox();
+?>
+<div id="features" style="display: none">
+  <?php
+  openBox("Features and Benefits", "thumbs-up", 12);
+  include('intro.php');
+  closeBox();
+  ?>
+</div>
+<?php
 closeBox();
 include('promo.php');
 require('footer.php');

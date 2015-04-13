@@ -5,9 +5,9 @@ if (!empty($no_visible_elements)) {
   <?php
 }
 ?>
-<h1>Ads EZ <br>
+<h2>Ads EZ <br>
   <small>Your Personal Ad Server.</small>
-</h1>
+</h2>
 <?php
 if (empty($no_visible_elements)) {
   EZ::showService();
@@ -48,12 +48,3 @@ if (empty($no_visible_elements)) {
   <li><em>HTML Ads</em>: The <em>Pro</em> version allows you to store and serve HTML and JavaScript ads such as AdSense and other providers. The lite version is limited to banner ads.</li>
   <li><em>OpenX/Revive Replacement</em>: Ads EZ is designed to be drop-in replacement for OpenX/Revive ad server. In the <em>Pro</em>, you can generate the <code>.htaccess</code> directives that will make your Ads EZ app look like your OpenX server to the world.</li>
 </ol>
-
-<h5>Credits</h5>
-<ul>
-  <li>Ads EZ includes GeoLite data created by MaxMind, available from <a href="http://www.maxmind.com">http://www.maxmind.com</a>.
-  </li>
-  <li>
-    Ads EZ admin interface is based on <a href="http://usman.it/free-responsive-admin-template/">Charisma</a>, a free, responsive admin template built on the twitter bootstrap framework.
-  </li>
-</ul>
