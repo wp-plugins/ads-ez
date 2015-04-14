@@ -6,31 +6,33 @@ $cfgDir = dirname(dirname(__FILE__));
   <ul>
     <li><strong><a href='banners-new.php'>Upload your banners</a></strong> to the <code>banners</code> folder (<code><?php echo $cfgDir; ?>/banners</code>) on your server and hit the <b><a href="banners-batch.php">Batch Process</a></b> menu item to provide banner data.</li>
     <li>Get the <strong><a href="invocation.php">invocation codes</a></strong> and place them on your websites to start serving ads.</li>
-    <li>Take this <strong><a class="restart" href="#">tour</a></strong> any time you would like to go through the application features again.</li>
+    <li>Take a <strong><a class="restart" href="#">tour</a></strong> any time you would like to go through the application features.</li>
   </ul>
   <h4>WordPress and Shortcodes</h4>
-  <p>If you are using the Ads EZ ad server as a WordPress plugin, you can use <a href='http://codex.wordpress.org/Shortcode' target='_blank'>shortcodes</a> to place your ads on your posts and pages. Use the shortcode <code>[adsez]</code>,<code>[ads-ez]</code> or <code>[adsZz]</code>.</p>
+  <p>If you are using the Ads EZ ad server as a WordPress plugin, you can use <a href='http://codex.wordpress.org/Shortcode' target='_blank' class='popup-long'>shortcodes</a> to place your ads on your posts and pages. Use the shortcode <code>[adsez]</code>,<code>[ads-ez]</code> or <code>[adsZz]</code>.</p>
   <p>The supported parameters are <code>type</code> (which can be <code>banner</code> or <code>html</code>), <code>size</code> (ad size in the format <code>width x height</code>) and <code>cat</code> (ad category). To see the sizes and categories available, please visit the <a href='invocation.php'>Invocation</a> page.</p>
 
   <h4>Context-Aware Help</h4>
-  <p>Most of the admin pages of this application have a blue help button near the right hand side top corner. Clicking on it will give instructions and help specific to the task you are working on. All configuration options have a help button associated with it, which give you popover help bubble when you hover over them. Finally, almost every button in the admin interface has popover help associated with it. If you need further assistance, please see the support channels available.</p>
+  <p>Most of the admin pages of this application have a blue help button near the right hand side top corner. Clicking on it will give instructions and help specific to the task you are working on. All configuration options have a help button associated with it, which gives you a popover help bubble when you hover over it. Finally, almost every button in the admin interface has popover help associated with it. If you need further assistance, please see the <a href='#' id='showSupportChannels'>support channels</a> available.</p>
 </div>
 <div class="col-lg-4 col-sm-12">
   <h4>Play with a Demo</h4>
   <ul>
     <li>If you would like to play with the admin interface without messing up your installation, <a href="http://demo.thulasidas.com/ads-ez" title='Visit the demo site to play with the admin interface' data-toggle='tooltip' target="_blank">please visit Ads EZ demo site</a>.</li>
   </ul>
-  <h4>Need Support?</h4>
-  <ul>
-    <li>Please check the carefully prepared <a href="http://www.thulasidas.com/plugins/ads-ez#faq" class="popup-long" title='Your question or issue may be already answered or resolved in the FAQ' data-toggle='tooltip'> Plugin FAQ</a> for answers.</li>
-    <li>For the lite version, you may be able to get support from the <a href='https://wordpress.org/support/plugin/ads-ez/' class='popup-long' title='WordPress forums have community support for this plugin' data-toggle='tooltip'>WordPress support forum</a>.</li>
-    <li>For preferential support and free updates, you can purchase a <a href='http://buy.thulasidas.com/support' class='popup btn-xs btn-info' title='Support contract costs only $4.95 a month, and you can cancel anytime. Free updates upon request, and support for all the products from the author.' data-toggle='tooltip'>Support Contract</a>.</li>
-    <li>For one-off support issues, you can raise a one-time paid <a href='http://buy.thulasidas.com/ezsupport' class='popup btn-xs btn-primary' title='Support ticket costs $0.95 and lasts for 72 hours' data-toggle='tooltip'>Support Ticket</a> for prompt support.</li>
-    <li>Please include a link to your blog URL when you contact the plugin author.</li>
-  </ul>
+  <div id='supportChannels'>
+    <h4>Need Support?</h4>
+    <ul>
+      <li>Please check the carefully prepared <a href="http://www.thulasidas.com/plugins/ads-ez#faq" class="popup-long" title='Your question or issue may be already answered or resolved in the FAQ' data-toggle='tooltip'> Plugin FAQ</a> for answers.</li>
+      <li>For the lite version, you may be able to get support from the <a href='https://wordpress.org/support/plugin/ads-ez/' class='popup-long' title='WordPress forums have community support for this plugin' data-toggle='tooltip'>WordPress support forum</a>.</li>
+      <li>For preferential support and free updates, you can purchase a <a href='http://buy.thulasidas.com/support' class='popup btn-xs btn-info' title='Support contract costs only $4.95 a month, and you can cancel anytime. Free updates upon request, and support for all the products from the author.' data-toggle='tooltip'>Support Contract</a>.</li>
+      <li>For one-off support issues, you can raise a one-time paid <a href='http://buy.thulasidas.com/ezsupport' class='popup btn-xs btn-primary' title='Support ticket costs $0.95 and lasts for 72 hours' data-toggle='tooltip'>Support Ticket</a> for prompt support.</li>
+      <li>Please include a link to your blog when you contact the plugin author for support.</li>
+    </ul>
+  </div>
   <h4>Happy with this plugin?</h4>
   <ul>
-    <li>Please leave a short review and rate it at <a href=https://wordpress.org/plugins/ads-ez/" class="popup-long" title='Please help the author and other users by leaving a short review for this plugin and by rating it' data-toggle='tooltip'>WordPress</a>. Thanks!</li>
+    <li>Please leave a short review and rate it at <a href="https://wordpress.org/plugins/ads-ez/" class="popup-long" title='Please help the author and other users by leaving a short review for this plugin and by rating it' data-toggle='tooltip'>WordPress</a>. Thanks!</li>
   </ul>
 </div>
 <div class="clearfix"></div>
@@ -235,6 +237,19 @@ if (isset($_REQUEST['inframe'])) {
         content: "<p>You now know the Ads EZ interface. Congratulations!</p>"
       });
     }
+    $("#showSupportChannels").click(function (e) {
+      e.preventDefault();
+      var bg = $("#supportChannels").css("backgroundColor");
+      var fg = $("#supportChannels").css("color");
+      $("#supportChannels").css({backgroundColor: "yellow", color: "black"});
+      setTimeout(function () {
+        $("#supportChannels").css({backgroundColor: bg, color: fg});
+      }, 500);
+    });
+    $(".restart").click(function (e) {
+      e.preventDefault();
+      tour.restart();
+    });
     $(".restart").click(function (e) {
       e.preventDefault();
       tour.restart();
@@ -243,10 +258,10 @@ if (isset($_REQUEST['inframe'])) {
       e.preventDefault();
       $("#features").toggle();
       if ($("#features").is(":visible")) {
-        $(this).html('<i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Hide Features</a>');
+        $(this).html('<i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Hide Features');
       }
       else {
-        $(this).html('<i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Show Features</a>');
+        $(this).html('<i class="glyphicon glyphicon-thumbs-up icon-white"></i>&nbsp; Show Features');
       }
     });
   });
