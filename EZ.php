@@ -207,7 +207,7 @@ if (!class_exists("EZ")) {
         include_once ABSPATH . 'wp-admin/includes/plugin.php';
       }
       $plgSlug = basename(dirname(__FILE__)) . "/ads-ez.php";
-      return is_plugin_active($plgSlug) || strpos(__FILE__, 'mu-plugins');;
+      return is_plugin_active($plgSlug) || strpos(__FILE__, 'mu-plugins');
     }
 
     static function isInWP() {
@@ -524,6 +524,7 @@ if (!class_exists("EZ")) {
         $row['id'] = $posted_pk;
         $row[$posted_name] = $posted_value;
         $status = $db->putRowData($table, $row);
+        self::updateSize($table, $posted_pk);
       }
       if (!$status) {
         http_response_code(400);
@@ -532,6 +533,17 @@ if (!class_exists("EZ")) {
       http_response_code(200);
       echo $posted_pk;
       exit();
+    }
+
+    static function updateSize($table, $id) {
+      if ($table != 'htmlAds') {
+        return;
+      }
+      global $db;
+      $row = $db->getRowData($table, "id=$id");
+      $row = $row;
+      $row['size'] = "{$row['width']}x{$row['height']}";
+      $db->putRowData($table, $row);
     }
 
     static function mkCatNames($showInactive = false) {

@@ -62,7 +62,7 @@ function showBanner($banner) { // print the iFrame source
 EOF0;
   if ($badgeEnabled) {
     echo <<<EOF1
-      <div id='ezfooter'><a href='$badgeTarget' id='ezlink' target='_blank' onmouseover='this.innerHTML="$badgeLong"' onmouseout='this.innerHTML="EZ"'>$badgeShort</a></div>
+      <div id='ezfooter'><a href='$badgeTarget' id='ezlink' target='_blank' onmouseover='this.innerHTML="$badgeLong"' onmouseout='this.innerHTML="$badgeShort"'>$badgeShort</a></div>
 EOF1;
   }
   echo <<<EOF3
@@ -81,6 +81,7 @@ function showHtml($htmlAd) { // print the iFrame source
   $badgeShort = $options['badge_short_text'];
   $badgeEnabled = $options['badge_enable'];
   extract($htmlAd); // defines target and title
+  $html = stripslashes($html);
   echo <<<EOF0
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
@@ -95,7 +96,7 @@ function showHtml($htmlAd) { // print the iFrame source
 EOF0;
   if ($badgeEnabled) {
     echo <<<EOF1
-      <div id='ezfooter'><a href='$badgeTarget' id='ezlink' target='_blank' onmouseover='this.innerHTML="$badgeLong"' onmouseout='this.innerHTML="EZ"'>$badgeShort</a></div>
+      <div id='ezfooter'><a href='$badgeTarget' id='ezlink' target='_blank' onmouseover='this.innerHTML="$badgeLong"' onmouseout='this.innerHTML="$badgeShort"'>$badgeShort</a></div>
 EOF1;
   }
   echo <<<EOF3
