@@ -3,8 +3,8 @@ Contributors: manojtd
 Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
-Tested up to: 4.1
-Stable tag: 2.15
+Tested up to: 4.2
+Stable tag: 2.20
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -47,7 +47,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Misc. bug fixes.
+Compatibility with WordPress 4.2.
 
 == Screenshots ==
 
@@ -118,6 +118,7 @@ So allowing your webserver to serve the plugin admin files in an iFrame is compl
 
 = History =
 
+* V2.20: Compatibility with WordPress 4.2. [April 25, 2015]
 * V2.15: Misc. bug fixes. [April 23, 2-15]
 * V2.14: Adding strip_slashes to html ads. [April 22, 2015]
 * V2.13: Improvements in the admin dashboard. [April 15, 2015]
