@@ -4,14 +4,14 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.2
-Stable tag: 2.20
+Stable tag: 2.21
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
 
 == Description ==
 
-*Ads EZ* is the simplest possible way to serve your ads to multiple web sites.
+*Ads EZ* is the simplest possible way to serve your ads to multiple web sites. Using *Ads EZ*, you can centralize your banner ads in one location, and use simple shortcodes to place them on your blog pages, or generate invocation codes to place them on *any* other web sites or blogs. In the Pro version, you can even serve HTML ads with the same shortcode and invocation code mechanism.
 
 Do you have multiple websites which you monetize using advertising? If so, this personal ad server may be the right tool for you. *Ads EZ* makes it easy for you to set up an optimized ad server that can service your websites. Aiming at simplicity, Ads EZ does away with all the complicated zone and expiry settings. All you have to do is to collect your banners in a folder, upload them and specify their targets using a simple and intuitive interface.
 
@@ -47,7 +47,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Compatibility with WordPress 4.2.
+Admin page compatibility checks and improvements.
 
 == Screenshots ==
 
@@ -118,6 +118,7 @@ So allowing your webserver to serve the plugin admin files in an iFrame is compl
 
 = History =
 
+* V2.21: Admin page compatibility checks and improvements. [May 12, 2015]
 * V2.20: Compatibility with WordPress 4.2. [April 25, 2015]
 * V2.15: Misc. bug fixes. [April 23, 2-15]
 * V2.14: Adding strip_slashes to html ads. [April 22, 2015]
