@@ -41,8 +41,8 @@ $banners = array_keys($bannerMeta);
   label{width:90px}
   a.wrap{display:inline-block;width:300px;vertical-align:middle}
 </style>
-<button id="hide" title="If you want to hide images that already have all the required info, click here." data-toggle="tooltip" class="btn btn-info">Hide</button>
-<button id="show" title="By default, this editor shows only those banners that need editing. If you would like to se all banners, including those with all the required info already entered, please click on this button." data-toggle="tooltip" class="btn btn-primary" style="display:hidden">Show</button>
+<button id="hide" title="If you want to hide images that already have all the required info, click here." data-toggle="tooltip" data-placement="right" class="btn btn-info">Hide</button>
+<button id="show" title="By default, this editor shows only those banners that need editing. If you would like to se all banners, including those with all the required info already entered, please click on this button." data-toggle="tooltip" data-placement="right" class="btn btn-primary" style="display:hidden">Show</button>
 <?php
 openBox("Editing Banner Meta Data", "pencil", 12, "<p>The meta data items displayed with the banners below are editable. Click on any underlined quantity to edit it. Click on the thumbnail of the banner to see it in full size.</p><p>By default, this editor shows only those banners that lack some required data. If you would like to se all banners, including those with all the required info already entered, please click on the <b>Show</b> button.</p>");
 $catSource = EZ::mkCatSource();
