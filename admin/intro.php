@@ -14,7 +14,7 @@ if (empty($no_visible_elements)) {
 }
 ?>
 
-<p><em>Ads EZ</em> is the simplest possible way to serve your ads to multiple web sites. It centralizes your banners and textual ads in one location, with a powerful and modern admin interface.</p>
+<p><em>Ads EZ</em> is a clever program to serve your ads to multiple web sites. It can work as standalone web application or as a WordPress plugin. Using <em>Ads EZ</em>, you can centralize your banner ads in one location, and use simple shortcodes to place them on your blog pages, or generate invocation codes to place them on <em>any</em> other web sites or blogs. In the Pro version, you can even serve HTML ads with the same shortcode and invocation code mechanism.</p>
 
 <p>Do you have multiple websites which you monetize using advertising? If so, this personal ad server may be the right tool for you. <em>Ads EZ</em> makes it easy for you to set up an optimized ad server that can service your websites. Aiming at simplicity, Ads EZ does away with all the complicated zone and expiry settings. All you have to do is to collect your banners in a folder, upload them and specify their targets using a simple and intuitive interface.</p>
 

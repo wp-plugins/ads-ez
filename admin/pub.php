@@ -43,9 +43,6 @@ if (!empty($no_visible_elements)) {
 <p>If you would like to have the Pro features, purchase the <a class="goPro" href='http://buy.thulasidas.com/ads-ez'>Pro version</a> for $14.95. You will get an instant download link, and painless upgrade path with all your banners and metadata saved, including your admin credentials.</p>
 
 
-<p class="red">Remember to take a quick <b><a href="tour.php">tour</a></b> to know what this application can do for you.</p>
-
-
 <?php
 closeBox();
 include('promo.php');
