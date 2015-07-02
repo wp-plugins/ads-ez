@@ -162,7 +162,7 @@ if (!class_exists("EZ")) {
           $myusername = $_POST['myusername'];
           $mypassword = $_POST['mypassword'];
           $mypassword = self::md5($mypassword);
-          $result = $db->getData('administrator', '*', "username='$myusername' and password='$mypassword'");
+          $result = $db->getDataEx('administrator', '*', array("username" => $myusername, "password" => $mypassword));
           $count = count($result);
           // If result matches $myusername and $mypassword, table row must be 1 row
           if ($count == "1") {
@@ -209,11 +209,23 @@ if (!class_exists("EZ")) {
     }
 
     static function isActive() {
+      if (strpos(__FILE__, 'mu-plugins') !== false) {
+        return true;
+      }
+      if (class_exists("AdsEZ")) {
+        return true;
+      }
       if (!function_exists('is_plugin_active')) {
         include_once ABSPATH . 'wp-admin/includes/plugin.php';
       }
       $plgSlug = basename(dirname(__FILE__)) . "/ads-ez.php";
-      return is_plugin_active($plgSlug) || strpos(__FILE__, 'mu-plugins');
+      if (is_plugin_active($plgSlug)) {
+        return true;
+      }
+      if (is_plugin_active_for_network($plgSlug)) {
+        return true;
+      }
+      return false;
     }
 
     static function isInWP() {

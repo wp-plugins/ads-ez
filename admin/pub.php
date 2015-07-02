@@ -40,7 +40,7 @@ if (!empty($no_visible_elements)) {
 </ol>
 
 <h4>Upgrading to Pro</h4>
-<p>If you would like to have the Pro features, purchase the <a class="goPro" href='http://buy.thulasidas.com/ads-ez'>Pro version</a> for $14.95. You will get an instant download link, and painless upgrade path with all your banners and metadata saved, including your admin credentials.</p>
+<p>If you would like to have the Pro features, purchase the <a class="goPro" href='http://buy.thulasidas.com/ads-ez'>Pro version</a> for $20.95. You will get an instant download link, and painless upgrade path with all your banners and metadata saved, including your admin credentials.</p>
 
 
 <?php

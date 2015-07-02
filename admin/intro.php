@@ -1,7 +1,7 @@
 <?php
 if (!empty($no_visible_elements)) {
   ?>
-  <a href="#" class="btn btn-warning goPro" style="float:right" data-toggle="tooltip" title="Get the Pro Version Now for $14.95!"> <i class="glyphicon glyphicon-shopping-cart"></i> Buy Ads EZ Now!</a>
+  <a href="#" class="btn btn-warning goPro" style="float:right" data-toggle="tooltip" title="Get the Pro Version Now for $20.95!"> <i class="glyphicon glyphicon-shopping-cart"></i> Buy Ads EZ Now!</a>
   <?php
 }
 ?>
@@ -33,7 +33,7 @@ if (empty($no_visible_elements)) {
   <li>WordPress Integration: Ads EZ comes with built-in WordPress integration. It works as a WordPress plugin if uploaded to the <code>wp-content/plugins</code> folder of your blog. What's more, you can switch to the standalone mode from the WordPress plugin admin page of this application, while still using the WordPress authentication mechanism and database.</li>
 </ol>
 
-<p><em>Ads EZ</em> is available as a freely distributed <a href="http://buy.thulasidas.com/lite/ads-ez-lite.zip" title="Get Ads EZ Lite">lite version</a> and a <a href="http://buy.thulasidas.com/ads-ez" title="Get Ads EZ Pro for $14.95" class="goPro">Pro version</a>, which adds a ton of extra features.</p>
+<p><em>Ads EZ</em> is available as a freely distributed <a href="http://buy.thulasidas.com/lite/ads-ez-lite.zip" title="Get Ads EZ Lite">lite version</a> and a <a href="http://buy.thulasidas.com/ads-ez" title="Get Ads EZ Pro for $20.95" class="goPro">Pro version</a>, which adds a ton of extra features.</p>
 
 <h4>Pro Features</h4>
 

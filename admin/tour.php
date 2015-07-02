@@ -108,7 +108,7 @@ if (isset($_REQUEST['inframe'])) {
         element: "#goPro",
         placement: "right",
         title: "Upgrade Your App to Pro",
-        content: "To unlock the full potential of this app, you may want to purchase the Pro version. You will get an link to download it instantly. It costs only $14.95 and adds tons of features. These Pro features are highlighted by a red icon on this menu bar."
+        content: "To unlock the full potential of this app, you may want to purchase the Pro version. You will get an link to download it instantly. It costs only $20.95 and adds tons of features. These Pro features are highlighted by a red icon on this menu bar."
       });
       tour.addStep({// The first on ul unroll is ignored. Bug in BootstrapTour?
         element: "#banners",

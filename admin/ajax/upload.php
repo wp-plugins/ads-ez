@@ -6,6 +6,11 @@ if (EZ::isLoggedIn()) {
   $targetPath = dirname(dirname(dirname(__FILE__))) . $ds . "banners" . $ds;  //4
   if (!empty($_FILES)) {
     $tempFile = $_FILES['file']['tmp_name'];
+    if (getimagesize($tempFile) === false) {
+      http_response_code(400);
+      $error = "{$_FILES['file']['name']}: Not allowed.";
+      die($error);
+    }
     $targetFile = $targetPath . $_FILES['file']['name'];
     if (!@move_uploaded_file($tempFile, $targetFile)) {
       http_response_code(400);

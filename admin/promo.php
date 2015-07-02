@@ -1,9 +1,9 @@
 <div class="clearfix">&nbsp;</div>
 <div class="col-md-3 col-sm-6 goPro">
-  <a data-toggle="tooltip" title="Get the Pro version for only $14.95. Tons of extra features. Instant download." class="well top-block goPro" href="http://buy.thulasidas.com/ads-ez">
+  <a data-toggle="tooltip" title="Get the Pro version for only $20.95. Tons of extra features. Instant download." class="well top-block goPro" href="http://buy.thulasidas.com/ads-ez">
     <i class="glyphicon glyphicon-shopping-cart red"></i>
     <div>Get Ads EZ Pro</div>
-    <div>$14.95. Instant Download</div>
+    <div>$20.95. Instant Download</div>
   </a>
 </div>
 <div class="col-md-3 col-sm-6">

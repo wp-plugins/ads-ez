@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.2
-Stable tag: 2.25
+Stable tag: 2.26
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -31,7 +31,7 @@ Do you have multiple websites which you monetize using advertising? If so, this 
 8. Robust Security: Unbreakable authentication (using hash and salt), impervious to SQL injection etc.
 9. Data Validation: Client-side and server-side data validation to minimize data errors.
 
-*Ads EZ* is available as a freely distributed [lite version](http://buy.thulasidas.com/lite/ads-ez-lite.zip "Get Ads EZ Lite") and a [Pro version](http://buy.thulasidas.com/ads-ez-pro "Get Ads EZ Pro for $14.95"), which adds a ton of extra features.
+*Ads EZ* is available as a freely distributed [lite version](http://buy.thulasidas.com/lite/ads-ez-lite.zip "Get Ads EZ Lite") and a [Pro version](http://buy.thulasidas.com/ads-ez-pro "Get Ads EZ Pro for $20.95"), which adds a ton of extra features.
 
 = Pro Features =
 
@@ -47,7 +47,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Minor changes in documentation.
+Tightening login security in standalone mode and hardening banners upload.
 
 == Screenshots ==
 
@@ -118,6 +118,7 @@ So allowing your webserver to serve the plugin admin files in an iFrame is compl
 
 = History =
 
+* V2.26: Tightening login security in standalone mode and hardening banners upload. [Jul 2, 2015]
 * V2.25: Minor changes in documentation. [Jun 25, 2015]
 * V2.24: Bug fix in the stats module. [Jun 15, 2015]
 * V2.23: Bug fixes. [Jun 5, 2015]

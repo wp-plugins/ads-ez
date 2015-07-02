@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+
 if (empty($no_visible_elements)) {
   require_once 'lock.php';
 }
@@ -227,7 +229,7 @@ function getHeader() {
                     <?php
                     if (!$isPro) {
                       ?>
-                      <li id='goPro'><a href="pro.php" class="red goPro" data-toggle="popover" data-trigger="hover" data-content="Get the Pro version of this app for <i>only</i> $14.95. Tons of extra features. Instant download." data-placement="right" title="Upgrade to Pro"><i class="glyphicon glyphicon-shopping-cart"></i><span><b> Go Pro!</b></span></a></li>
+                      <li id='goPro'><a href="pro.php" class="red goPro" data-toggle="popover" data-trigger="hover" data-content="Get the Pro version of this app for <i>only</i> $20.95. Tons of extra features. Instant download." data-placement="right" title="Upgrade to Pro"><i class="glyphicon glyphicon-shopping-cart"></i><span><b> Go Pro!</b></span></a></li>
                       <?php
                     }
                     ?>
