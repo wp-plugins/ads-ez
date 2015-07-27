@@ -4,7 +4,7 @@ Donate link: http://buy.thulasidas.com/ads-ez
 Tags: ads, advertising, income, ad server, openx, revive, adserver
 Requires at least: 4.0
 Tested up to: 4.2
-Stable tag: 2.26
+Stable tag: 2.30
 License: GPL2 or later
 
 Ads EZ is personal ad server with numerous features. It centralizes your banner ads in one location, and provides a modern interface to manage them.
@@ -47,7 +47,7 @@ If the following features are important to you, consider buying the *Pro* versio
 
 == Upgrade Notice ==
 
-Tightening login security in standalone mode and hardening banners upload.
+Implementing redirect to previous page upon login. Preparing for major refactoring.
 
 == Screenshots ==
 
@@ -118,6 +118,7 @@ So allowing your webserver to serve the plugin admin files in an iFrame is compl
 
 = History =
 
+* V2.30: Implementing redirect to previous page upon login. Preparing for major refactoring. [Jul 25, 2015]
 * V2.26: Tightening login security in standalone mode and hardening banners upload. [Jul 2, 2015]
 * V2.25: Minor changes in documentation. [Jun 25, 2015]
 * V2.24: Bug fix in the stats module. [Jun 15, 2015]
